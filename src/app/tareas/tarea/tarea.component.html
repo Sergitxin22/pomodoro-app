@@ -1,0 +1,25 @@
+<main>
+   <div class="parent">
+        <mat-card>
+            <mat-card-title>POMODORO
+              <p class="settings">Opciones</p>
+            </mat-card-title>
+            
+            <mat-form-field class="example-full-width" appearance="fill" *ngIf="tarea.length == 0">
+                <mat-label>Tarea</mat-label>
+                <input #tarea2 matInput placeholder="Introduce la tarea">
+              </mat-form-field>
+            <p class="tarea" *ngIf="!(tarea.length == 0)">{{ mostrarTarea }}</p>
+            <p class="timer" *ngIf="!(tarea.length == 0) && enCurso">{{ timeText }}</p>
+            <mat-card-actions *ngIf="tarea.length == 0">
+              <button mat-button (click)="inicializarPomodoro(); enCurso=true">INICIAR</button>
+            </mat-card-actions>
+            <mat-card-actions *ngIf="!(tarea.length == 0)">
+              <button mat-button (click)="pauseTimeLine()">PAUSAR</button>
+              <button mat-button (click)="createTimeLine()">CONTINUAR</button>
+              <button mat-button (click)="detener()">DETENER</button>
+              <button mat-button (click)="siguienteCiclo()">SIGUIENTE CICLO</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+</main>
