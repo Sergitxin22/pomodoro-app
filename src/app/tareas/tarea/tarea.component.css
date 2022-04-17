@@ -15,7 +15,7 @@ mat-card{
 
 mat-card-title{
     font-size: 4em;
-    margin: 25px 0px !important;
+    margin: 40px 0px !important;
 }
 
 mat-form-field{
@@ -40,8 +40,7 @@ p{
 
 .settings{
     font-size: 15px;
-    position: relative;
-    top: -2em;
-    left: 35em;
-    margin-left: 0.5em !important;
+    position: absolute;
+    left: 75%;
+    top: 4em;
 }
