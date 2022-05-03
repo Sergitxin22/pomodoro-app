@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-tarea',
@@ -9,11 +10,16 @@ export class TareaComponent {
   @ViewChild('tarea2')
   tarea2!: ElementRef;
 
-  tiempoBloque: number[] = [15, 13, 16, 15];  
+  tiempoBloque: number[] = [1500, 300, 1500, 300, 1500, 300, 1500, 300];  
   bloque: number = 0;  
   tiempo: number = this.tiempoBloque[this.bloque];
   minutos: number = Math.floor(this.tiempo / 60);
   segundos: number = Math.floor(this.tiempo % 60);
+  notificacion = new Audio('../../assets/notificacion.mp3');
+
+  constructor( public appService: AppService ) { }
+
+  ultimoBloque: number = this.appService.ultimoBloque;
     
   tarea: string = '';
   mostrarTarea: string = '';
@@ -88,6 +94,9 @@ export class TareaComponent {
   }
 
   updateTarea(){
+    if(this.bloque != 0) {
+      this.notificacion.play();
+    }
     if(this.bloque% 2 === 0){
       this.mostrarTarea = this.tarea;
     }else{
@@ -96,6 +105,7 @@ export class TareaComponent {
   }
 
   inicializarPomodoro() {
+    this.tiempoBloque[7] = this.ultimoBloque;
     this.getTarea();
     if(this.tarea.length > 0) {
       this.createTimeLine();

@@ -6,6 +6,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 
 import { TareaComponent } from "./tarea/tarea.component";
+import { AppRoutingModule } from "../app-routing.module";
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { TareaComponent } from "./tarea/tarea.component";
         MatSliderModule,
         MatCardModule,
         MatInputModule,
-        FormsModule
+        FormsModule,
+        AppRoutingModule
     ]
 })
 export class TareasModule {}

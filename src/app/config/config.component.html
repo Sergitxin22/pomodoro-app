@@ -1,0 +1,23 @@
+<main>
+  <div class="parent">
+    <mat-card>
+      <mat-card-title>POMODORO
+        <a routerLink="/" class="settings">Volver</a>
+      </mat-card-title>
+        <div class="opciones">
+          <div>
+          <span>Cuarto Bloque de descanso</span>
+        </div>
+          <div>
+          <mat-radio-group aria-label="Select an option" [(ngModel)]="tiempo">
+            <mat-radio-button value="900">15 minutos</mat-radio-button>
+            <mat-radio-button value="1800">30 minutos</mat-radio-button>
+          
+          </mat-radio-group>  
+          <button (click)="setUltimoBloque()">Guardar</button>
+        </div>
+        </div>
+                      
+    </mat-card>
+  </div>
+</main>

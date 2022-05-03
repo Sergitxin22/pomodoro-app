@@ -1,9 +1,9 @@
 <main>
    <div class="parent">
         <mat-card>
-            <mat-card-title>POMODORO
-              <p class="settings">Opciones</p>
-            </mat-card-title>
+          <mat-card-title>POMODORO
+            <a routerLink="config" class="settings">Opciones</a>
+          </mat-card-title>
             
             <mat-form-field class="example-full-width" appearance="fill" *ngIf="tarea.length == 0">
                 <mat-label>Tarea</mat-label>
